@@ -214,6 +214,27 @@ class EarthDrawer {
 
 {
   function draw() {
+    const canvas = document.querySelector('.Line_Dash1');
+    if (typeof canvas.getContext === 'undefined') {
+      return;
+    }
+    const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(124, 0);
+    ctx.lineTo(93, 31);
+    ctx.moveTo(31, 93);
+    ctx.lineTo(0, 124);
+    ctx.strokeStyle= '#002b61'
+    ctx.stroke();
+  }
+
+  draw();
+}
+
+
+{
+  function draw() {
     const canvas = document.querySelector('.Line_Dash2');
     if (typeof canvas.getContext === 'undefined') {
       return;
@@ -276,7 +297,6 @@ class EarthDrawer {
 }
 
 
-
 // {
 //   var Swiper = new Swiper ('.swiper-container', {
 //     loop: true,
@@ -292,3 +312,18 @@ class EarthDrawer {
 //     },
 //   })
 // }
+
+
+{
+  const overlay = document.querySelector('.overlay');
+  const open = document.getElementById('open');
+  const close = document.getElementById('close');
+
+  open.addEventListener('click', () => {
+    overlay.classList.add('show');
+  });
+  close.addEventListener('click', () => {
+    overlay.classList.remove('show');
+  });
+}
+
